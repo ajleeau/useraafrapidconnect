@@ -326,14 +326,13 @@ class PageController extends Controller {
 	}
         \OCP\Util::writeLog('OC_useraafrapidconnect', 'edupersonprincipalname: '.$edupersonprincipalname, 0);
 
-//	if (!array_key_exists('auedupersonsharedtoken', $attrs)) {
-//            \OCP\Util::writeLog('OC_useraafrapidconnect', 'auedupersonsharedtoken entry non-existent in attrs array', 3);
-//	    $parameters['internalexception'] = 'auedupersonsharedtoken entry non-existent in attrs array';
-//            // return new TemplateResponse($this->appName, 'login', $parameters, 'guest');
-//	    return new Http\RedirectResponse($this->urlgenerator->getAbsoluteURL('/index.php/login'));
-//	}
-	// $auedupersonsharedtoken = $attrs['auedupersonsharedtoken'];
-	$auedupersonsharedtoken = 'VGB1UC_U3OeF2AB0XpCrzGrvYJU';
+	if (!array_key_exists('auedupersonsharedtoken', $attrs)) {
+            \OCP\Util::writeLog('OC_useraafrapidconnect', 'auedupersonsharedtoken entry non-existent in attrs array', 3);
+	    $parameters['internalexception'] = 'auedupersonsharedtoken entry non-existent in attrs array';
+            // return new TemplateResponse($this->appName, 'login', $parameters, 'guest');
+	    return new Http\RedirectResponse($this->urlgenerator->getAbsoluteURL('/index.php/login'));
+	}
+	$auedupersonsharedtoken = $attrs['auedupersonsharedtoken'];
 	if (is_null($auedupersonsharedtoken)) {
             \OCP\Util::writeLog('OC_useraafrapidconnect', 'auedupersonsharedtoken string is missing', 3);
 	    $parameters['internalexception'] = 'auedupersonsharedtoken string is missing';
