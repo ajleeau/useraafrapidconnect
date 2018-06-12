@@ -6,7 +6,7 @@
  * later. See the COPYING file.
  *
  * @author Adrian Lee <adrian.lee@qcif.edu.au>
- * @copyright Adrian Lee 2016
+ * @copyright Adrian Lee 2018
  */
 
 namespace OCA\UserAafRapidConnect\AppInfo;
